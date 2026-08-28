@@ -1,1 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Earning Platform</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 flex items-center justify-center h-screen">
 
+    <div class="bg-slate-800 p-8 rounded-xl shadow-2xl w-96 border border-slate-700">
+        <h2 class="text-3xl font-bold text-white text-center mb-6">Fanta<span class="text-green-500">Earn</span></h2>
+        
+        <form onsubmit="handleLogin(event)">
+            <div class="mb-4">
+                <label class="block text-slate-300 text-sm mb-2">Email Address</label>
+                <input type="email" id="email" required class="w-full px-4 py-2 bg-slate-900 border border-slate-700 rounded text-white focus:outline-none focus:border-green-500" placeholder="user@gmail.com">
+            </div>
+            
+            <div class="mb-6">
+                <label class="block text-slate-300 text-sm mb-2">Password</label>
+                <input type="password" id="password" required class="w-full px-4 py-2 bg-slate-900 border border-slate-700 rounded text-white focus:outline-none focus:border-green-500" placeholder="********">
+            </div>
+            
+            <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition duration-200">
+                Login Now
+            </button>
+        </form>
+
+        <p class="text-slate-400 text-sm text-center mt-4">
+            Don't have an account? <a href="#" class="text-green-500 hover:underline">Register</a>
+        </p>
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            // Simple redirection to dashboard for frontend preview
+            window.location.href = "dashboard.html";
+        }
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Earning Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-950 text-white font-sans">
+
+    <div class="flex h-screen overflow-hidden">
+        
+        <!-- Sidebar -->
+        <div class="w-64 bg-slate-900 border-r border-slate-800 hidden md:block">
+            <div class="p-5 text-2xl font-bold text-green-500 tracking-wider">FantaEarn</div>
+            <ul class="mt-5">
+                <li class="px-6 py-3 bg-green-600 text-white flex items-center gap-3 cursor-pointer"><i class="fa-solid fa-house"></i> Dashboard</li>
+                <li class="px-6 py-3 hover:bg-slate-800 text-slate-300 flex items-center gap-3 cursor-pointer"><i class="fa-solid fa-rectangle-ad"></i> Watch Ads</li>
+                <li class="px-6 py-3 hover:bg-slate-800 text-slate-300 flex items-center gap-3 cursor-pointer"><i class="fa-solid fa-box"></i> Packages</li>
+                <li class="px-6 py-3 hover:bg-slate-800 text-slate-300 flex items-center gap-3 cursor-pointer"><i class="fa-solid fa-wallet"></i> Withdraw</li>
+                <li class="px-6 py-3 hover:bg-slate-800 text-slate-300 flex items-center gap-3 cursor-pointer"><i class="fa-solid fa-users"></i> Referrals</li>
+                <li class="px-6 py-3 hover:bg-slate-800 text-slate-300 flex items-center gap-3 mt-20 cursor-pointer text-red-400"><i class="fa-solid fa-right-from-bracket"></i> Logout</li>
+            </ul>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="flex-1 flex flex-col overflow-y-auto">
+            
+            <!-- Top Navbar -->
+            <header class="bg-slate-900 border-b border-slate-800 p-4 flex justify-between items-center">
+                <h1 class="text-xl font-semibold">User Dashboard</h1>
+                <div class="flex items-center gap-3">
+                    <span class="bg-green-500/10 text-green-500 px-3 py-1 rounded-full text-sm font-medium border border-green-500/20">Active Plan: Free</span>
+                    <div class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center font-bold">U</div>
+                </div>
+            </header>
+
+            <!-- Dashboard Body -->
+            <div class="p-6">
+                
+                <!-- Welcome Banner -->
+                <div class="bg-gradient-to-r from-green-600 to-emerald-800 rounded-2xl p-6 mb-6 shadow-lg">
+                    <h2 class="text-2xl font-bold mb-2">Welcome Back, User!</h2>
+                    <p class="text-green-100 text-sm">Ads dekh kar aur tasks complete karke mazeed earn karein.</p>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <!-- Balance 1 -->
+                    <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl">
+                        <p class="text-slate-400 text-sm">Main Balance</p>
+                        <h3 class="text-3xl font-bold text-green-400 mt-1">Rs. 450.00</h3>
+                    </div>
+                    <!-- Balance 2 -->
+                    <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl">
+                        <p class="text-slate-400 text-sm">Total Withdraw</p>
+                        <h3 class="text-3xl font-bold text-white mt-1">Rs. 1,200.00</h3>
+                    </div>
+                    <!-- Total Referrals -->
+                    <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl">
+                        <p class="text-slate-400 text-sm">Total Referrals</p>
+                        <h3 class="text-3xl font-bold text-white mt-1">5 Persons</h3>
+                    </div>
+                </div>
+
+                <!-- Quick Actions / Tasks Section -->
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl">
+                    <h3 class="text-lg font-bold mb-4">Available Earning Tasks</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center bg-slate-950 p-4 rounded-lg border border-slate-800">
+                            <div>
+                                <h4 class="font-semibold text-white">Watch PTC Advertisement #1</h4>
+                                <p class="text-xs text-slate-400">Duration: 30 Seconds | Reward: Rs. 15</p>
+                            </div>
+                            <button onclick="alert('Ad viewed successfully! Rs. 15 added.')" class="bg-green-600 hover:bg-green-700 text-xs px-4 py-2 rounded font-semibold transition">View Ad</button>
+                        </div>
+                        <div class="flex justify-between items-center bg-slate-950 p-4 rounded-lg border border-slate-800">
+                            <div>
+                                <h4 class="font-semibold text-white">Watch PTC Advertisement #2</h4>
+                                <p class="text-xs text-slate-400">Duration: 20 Seconds | Reward: Rs. 10</p>
+                            </div>
+                            <button onclick="alert('Ad viewed successfully! Rs. 10 added.')" class="bg-green-600 hover:bg-green-700 text-xs px-4 py-2 rounded font-semibold transition">View Ad</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
